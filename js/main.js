@@ -45,19 +45,19 @@
     // What is a label: is a tool that allows me to point to a time in the timeline where I want some
     // animation to be triggered. eg:
 
-    /*
+    /**/
     tl.from(title, 0.6, {
         y: -30,
         autoAlpha: 0,
         ease: Power1.easeOut,
     })
     .add('start_image_animation')
-    .from(intro, 1, {
+    .from(intro, 2, {
         y: -30,
         autoAlpha: 0,
         ease: Power1.easeOut
     })
-    .from(subtitle, 0.3, {
+    .from(subtitle, 1, {
         y: -30,
         autoAlpha: 0,
         ease: Power1.easeOut
@@ -71,9 +71,39 @@
         autoAlpha: 0,
         ease: Power1.easeInOut
     }, 'start_image_animation');
-    */
-
-    //Timeline Playback
     
+
+
+
+    //--------------- Timeline Playback
+
+    var btn_play = document.querySelector('.btn-play'),
+        btn_pause = document.querySelector('.btn-pause'),
+        btn_resume = document.querySelector('.btn-resume'),
+        btn_reverse = document.querySelector('.btn-reverse'),
+        btn_restart = document.querySelector('.btn-restart');
+
+    //Stop all animation from the beginning of the timeline
+    tl.pause();
+
+    btn_play.addEventListener('click', function() {
+        tl.play();
+    });
+
+    btn_pause.addEventListener('click', function() {
+        tl.pause();
+    });
+
+    btn_resume.addEventListener('click', function() {
+        tl.resume();
+    });
+
+    btn_reverse.addEventListener('click', function() {
+        tl.reverse();
+    });
+
+    btn_restart.addEventListener('click', function() {
+        tl.restart();
+    });
 
 })();

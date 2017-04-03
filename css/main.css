@@ -49,3 +49,18 @@ body {
 .image {
     max-width: 100%;
 }
+
+.btn-container {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 220px;
+    text-align: right;
+}
+.btn {
+    display: block;
+    width: 50%;
+    margin: 0 auto 30px;
+    padding: 15px 0;
+    
+}
