@@ -36,8 +36,54 @@
 
     //EASING
 
+    /*
     TweenMax.from(image, 1, {
-        x: -500, ease: Power4.easeIn
+        x: -500, ease: Power0.easeIn
     });
+    */
+
+    /*
+    TweenMax.from(image, 1, {
+        x: -500, ease: Elastic.easeInOut
+    });
+    */ 
+    
+    /*
+    TweenMax.from(image, 1, {
+        x: -500, ease: Expo.easeIn
+    });
+    */
+
+    /*
+    TweenMax.from(image, 1, {
+        x: -500, ease: Sine.easeIn
+    });
+    */
+
+    /*
+    Visit greensock.com/ease-visualizer to check all the available ease effects
+    */
+
+    // CALLBACKS
+
+    TweenMax.from(image, 3, {
+        x: -500,
+        ease: Power1.easeInOut,
+        onStart: onStart,
+        onUpdate: onUpdate,
+        onComplete: onComplete
+    });
+
+    function onStart() {
+        console.log('animation started');
+    }
+
+    function onUpdate() {
+        console.log('animation is in progress');
+    }
+
+    function onComplete() {
+        console.log('animation completed');
+    }
 
 })(jQuery);
